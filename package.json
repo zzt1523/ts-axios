@@ -1,6 +1,6 @@
 {
   "name": "ts-axios-zzt",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "",
   "keywords": [],
   "main": "dist/axios.umd.js",
