@@ -6,7 +6,8 @@ function normalizeHeaderName(headers, normalizedName) {
         return;
     }
     Object.keys(headers).forEach(function (name) {
-        if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+        if (name !== normalizedName &&
+            name.toUpperCase() === normalizedName.toUpperCase()) {
             headers[normalizedName] = headers[name];
             delete headers[name];
         }
@@ -44,7 +45,16 @@ function flattenHeaders(headers, method) {
         return headers;
     }
     headers = util_1.deepMerge(headers.common, headers[method], headers);
-    var methodsToDelete = ['delete', 'get', 'head', 'options', 'post', 'put', 'patch', 'common'];
+    var methodsToDelete = [
+        'delete',
+        'get',
+        'head',
+        'options',
+        'post',
+        'put',
+        'patch',
+        'common'
+    ];
     methodsToDelete.forEach(function (method) {
         delete headers[method];
     });

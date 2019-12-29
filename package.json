@@ -12,7 +12,7 @@
   "author": "庄 <>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:zzt1523/ts-axios.git"
   },
   "license": "MIT",
   "engines": {

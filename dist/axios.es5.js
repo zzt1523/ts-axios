@@ -52,7 +52,8 @@ function normalizeHeaderName(headers, normalizedName) {
         return;
     }
     Object.keys(headers).forEach(function (name) {
-        if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+        if (name !== normalizedName &&
+            name.toUpperCase() === normalizedName.toUpperCase()) {
             headers[normalizedName] = headers[name];
             delete headers[name];
         }
@@ -88,7 +89,16 @@ function flattenHeaders(headers, method) {
         return headers;
     }
     headers = deepMerge(headers.common, headers[method], headers);
-    var methodsToDelete = ['delete', 'get', 'head', 'options', 'post', 'put', 'patch', 'common'];
+    var methodsToDelete = [
+        'delete',
+        'get',
+        'head',
+        'options',
+        'post',
+        'put',
+        'patch',
+        'common'
+    ];
     methodsToDelete.forEach(function (method) {
         delete headers[method];
     });
@@ -147,12 +157,12 @@ function createError(message, config, code, request, response) {
 function encode(val) {
     return encodeURIComponent(val)
         .replace(/%40/g, '@')
-        .replace(/%3A/ig, ':')
+        .replace(/%3A/gi, ':')
         .replace(/%24/g, '$')
-        .replace(/%2C/ig, ',')
+        .replace(/%2C/gi, ',')
         .replace(/%20/g, '+')
-        .replace(/%5B/ig, '[')
-        .replace(/%5D/ig, ']');
+        .replace(/%5B/gi, '[')
+        .replace(/%5D/gi, ']');
 }
 function buildURL(url, params, paramsSerializer) {
     if (!params) {
@@ -205,11 +215,14 @@ function isAbsoluteURL(url) {
     return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 }
 function combineURL(baseURL, relativeURL) {
-    return relativeURL ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') : baseURL;
+    return relativeURL
+        ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+        : baseURL;
 }
 function isURLSameOrigin(reuqestURL) {
     var parsedOrigin = resolveURL(reuqestURL);
-    return (parsedOrigin.protocol === currentOrigin.protocol && parsedOrigin.host === currentOrigin.host);
+    return (parsedOrigin.protocol === currentOrigin.protocol &&
+        parsedOrigin.host === currentOrigin.host);
 }
 var urlParsingNode = document.createElement('a');
 var currentOrigin = resolveURL(window.location.href);
@@ -259,7 +272,9 @@ function xhr(config) {
                     return;
                 }
                 var responseHeader = parseHeaders(request.getAllResponseHeaders());
-                var responseData = responseType && responseType !== 'text' ? request.response : request.responseText;
+                var responseData = responseType && responseType !== 'text'
+                    ? request.response
+                    : request.responseText;
                 var response = {
                     data: responseData,
                     status: request.status,
@@ -294,7 +309,8 @@ function xhr(config) {
                 }
             }
             if (auth) {
-                headers['Authorization'] = 'Basic ' + btoa(auth.username + ':' + auth.password);
+                headers['Authorization'] =
+                    'Basic ' + btoa(auth.username + ':' + auth.password);
             }
             Object.keys(headers).forEach(function (name) {
                 if (data === null && name.toLowerCase() === 'content-type') {
@@ -428,7 +444,7 @@ function deepMergeStrat(val1, val2) {
     }
 }
 var stratKeysFromVal2 = ['url', 'params', 'data'];
-stratKeysFromVal2.forEach(function (key) { return strats[key] = fromVal2Strat; });
+stratKeysFromVal2.forEach(function (key) { return (strats[key] = fromVal2Strat); });
 var stratKeysDeepMerge = ['headers', 'auth'];
 stratKeysDeepMerge.forEach(function (key) {
     strats[key] = deepMergeStrat;
@@ -474,10 +490,12 @@ var Axios = /** @class */ (function () {
         config = mergeConfig(this.defaults, config);
         config.method = config.method.toLowerCase();
         console.log(config);
-        var chain = [{
+        var chain = [
+            {
                 resolved: dispatchRequest,
                 rejected: undefined
-            }];
+            }
+        ];
         this.interceptors.request.forEach(function (interceptors) {
             chain.unshift(interceptors);
         });

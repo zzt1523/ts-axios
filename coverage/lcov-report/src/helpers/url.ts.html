@@ -136,7 +136,17 @@
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">13x</span>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,6 +165,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -210,11 +224,16 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">61x</span>
 <span class="cline-any cline-yes">61x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,106 +242,117 @@
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isDate, isPlainObject, isURLSearchParams } from './util'
 &nbsp;
 interface URLOrigin {
-    protocol: string
-    host: string
+  protocol: string
+  host: string
 }
 &nbsp;
-function encode(val: string):string {
-    return encodeURIComponent(val)
+function encode(val: string): string {
+  return encodeURIComponent(val)
     .replace(/%40/g, '@')
-    .replace(/%3A/ig, ':')
+    .replace(/%3A/gi, ':')
     .replace(/%24/g, '$')
-    .replace(/%2C/ig, ',')
+    .replace(/%2C/gi, ',')
     .replace(/%20/g, '+')
-    .replace(/%5B/ig, '[')
-    .replace(/%5D/ig, ']')
+    .replace(/%5B/gi, '[')
+    .replace(/%5D/gi, ']')
 }
 &nbsp;
-export function buildURL(url: string, params?: any, paramsSerializer?: (params: any) =&gt; string):string {
-    if (!params) {
-        return url
-    }
-    let serializedParams
-&nbsp;
-    if (paramsSerializer) {
-        serializedParams = paramsSerializer(params)
-    } else if (isURLSearchParams(params)) {
-        serializedParams = params.toString()
-    } else {    
-        const parts: string[] = []
-    
-        Object.keys(params).forEach(key =&gt; {
-            const val = params[key]
-            if (val === null || typeof val === 'undefined') {
-                return
-            }
-            let values = []
-            if (Array.isArray(val)) {
-                values = val
-                key += '[]'
-            } else {
-                values = [val]
-            }
-            values.forEach(val =&gt; {
-                if (isDate(val)) {
-                    val = val.toISOString()
-                } else if (isPlainObject(val)) {
-                    val = JSON.stringify(val)
-                }
-                parts.push(`${encode(key)}=${encode(val)}`)
-            })
-        })
-    
-        serializedParams = parts.join('&amp;')
-    }
-&nbsp;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (serializedParams) {
-        const markIndex = url.indexOf('#')
-        if (markIndex !== -1) {
-            url = url.slice(0, markIndex)
-        }
-        url += (url.indexOf('?') === -1 ? '?' : '&amp;') +  serializedParams
-    }
+export function buildURL(
+  url: string,
+  params?: any,
+  paramsSerializer?: (params: any) =&gt; string
+): string {
+  if (!params) {
     return url
+  }
+  let serializedParams
+&nbsp;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params)
+  } else if (isURLSearchParams(params)) {
+    serializedParams = params.toString()
+  } else {
+    const parts: string[] = []
+&nbsp;
+    Object.keys(params).forEach(key =&gt; {
+      const val = params[key]
+      if (val === null || typeof val === 'undefined') {
+        return
+      }
+      let values = []
+      if (Array.isArray(val)) {
+        values = val
+        key += '[]'
+      } else {
+        values = [val]
+      }
+      values.forEach(val =&gt; {
+        if (isDate(val)) {
+          val = val.toISOString()
+        } else if (isPlainObject(val)) {
+          val = JSON.stringify(val)
+        }
+        parts.push(`${encode(key)}=${encode(val)}`)
+      })
+    })
+&nbsp;
+    serializedParams = parts.join('&amp;')
+  }
+&nbsp;
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (serializedParams) {
+    const markIndex = url.indexOf('#')
+    if (markIndex !== -1) {
+      url = url.slice(0, markIndex)
+    }
+    url += (url.indexOf('?') === -1 ? '?' : '&amp;') + serializedParams
+  }
+  return url
 }
 &nbsp;
 export function isAbsoluteURL(url: string): boolean {
-    return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url)
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url)
 }
 &nbsp;
 export function combineURL(baseURL: string, relativeURL?: string): string {
-    return relativeURL ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') : baseURL
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL
 }
 &nbsp;
 export function isURLSameOrigin(reuqestURL: string): boolean {
-    const parsedOrigin = resolveURL(reuqestURL)
-    return (parsedOrigin.protocol === currentOrigin.protocol  &amp;&amp; parsedOrigin.host === currentOrigin.host)
+  const parsedOrigin = resolveURL(reuqestURL)
+  return (
+    parsedOrigin.protocol === currentOrigin.protocol &amp;&amp;
+    parsedOrigin.host === currentOrigin.host
+  )
 }
 &nbsp;
 const urlParsingNode = document.createElement('a')
 const currentOrigin = resolveURL(window.location.href)
 &nbsp;
 function resolveURL(url: string): URLOrigin {
-    urlParsingNode.setAttribute('href', url)
-    const { protocol, host } = urlParsingNode
+  urlParsingNode.setAttribute('href', url)
+  const { protocol, host } = urlParsingNode
 &nbsp;
-    return  {
-        protocol,
-        host
-    }
-}</pre></td></tr>
+  return {
+    protocol,
+    host
+  }
+}
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 29 2019 17:03:43 GMT+0800 (GMT+08:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 29 2019 17:09:17 GMT+0800 (GMT+08:00)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -24,10 +24,12 @@ var Axios = /** @class */ (function () {
         config = mergeConfig_1.default(this.defaults, config);
         config.method = config.method.toLowerCase();
         console.log(config);
-        var chain = [{
+        var chain = [
+            {
                 resolved: dispatchRequest_1.default,
                 rejected: undefined
-            }];
+            }
+        ];
         this.interceptors.request.forEach(function (interceptors) {
             chain.unshift(interceptors);
         });

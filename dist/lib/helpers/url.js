@@ -4,12 +4,12 @@ var util_1 = require("./util");
 function encode(val) {
     return encodeURIComponent(val)
         .replace(/%40/g, '@')
-        .replace(/%3A/ig, ':')
+        .replace(/%3A/gi, ':')
         .replace(/%24/g, '$')
-        .replace(/%2C/ig, ',')
+        .replace(/%2C/gi, ',')
         .replace(/%20/g, '+')
-        .replace(/%5B/ig, '[')
-        .replace(/%5D/ig, ']');
+        .replace(/%5B/gi, '[')
+        .replace(/%5D/gi, ']');
 }
 function buildURL(url, params, paramsSerializer) {
     if (!params) {
@@ -64,12 +64,15 @@ function isAbsoluteURL(url) {
 }
 exports.isAbsoluteURL = isAbsoluteURL;
 function combineURL(baseURL, relativeURL) {
-    return relativeURL ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') : baseURL;
+    return relativeURL
+        ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+        : baseURL;
 }
 exports.combineURL = combineURL;
 function isURLSameOrigin(reuqestURL) {
     var parsedOrigin = resolveURL(reuqestURL);
-    return (parsedOrigin.protocol === currentOrigin.protocol && parsedOrigin.host === currentOrigin.host);
+    return (parsedOrigin.protocol === currentOrigin.protocol &&
+        parsedOrigin.host === currentOrigin.host);
 }
 exports.isURLSameOrigin = isURLSameOrigin;
 var urlParsingNode = document.createElement('a');

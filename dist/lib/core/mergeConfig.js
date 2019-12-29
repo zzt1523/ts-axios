@@ -25,7 +25,7 @@ function deepMergeStrat(val1, val2) {
     }
 }
 var stratKeysFromVal2 = ['url', 'params', 'data'];
-stratKeysFromVal2.forEach(function (key) { return strats[key] = fromVal2Strat; });
+stratKeysFromVal2.forEach(function (key) { return (strats[key] = fromVal2Strat); });
 var stratKeysDeepMerge = ['headers', 'auth'];
 stratKeysDeepMerge.forEach(function (key) {
     strats[key] = deepMergeStrat;

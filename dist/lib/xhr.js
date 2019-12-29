@@ -35,7 +35,9 @@ function xhr(config) {
                     return;
                 }
                 var responseHeader = headers_1.parseHeaders(request.getAllResponseHeaders());
-                var responseData = responseType && responseType !== 'text' ? request.response : request.responseText;
+                var responseData = responseType && responseType !== 'text'
+                    ? request.response
+                    : request.responseText;
                 var response = {
                     data: responseData,
                     status: request.status,
@@ -70,7 +72,8 @@ function xhr(config) {
                 }
             }
             if (auth) {
-                headers['Authorization'] = 'Basic ' + btoa(auth.username + ':' + auth.password);
+                headers['Authorization'] =
+                    'Basic ' + btoa(auth.username + ':' + auth.password);
             }
             Object.keys(headers).forEach(function (name) {
                 if (data === null && name.toLowerCase() === 'content-type') {
