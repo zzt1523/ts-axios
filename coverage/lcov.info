@@ -1,5 +1,5 @@
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/axios.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/axios.ts
 FN:9,createInstance
 FN:20,create
 FN:28,all
@@ -41,7 +41,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/default.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/default.ts
 FN:20,(anonymous_0)
 FN:26,(anonymous_1)
 FN:31,(anonymous_2)
@@ -76,7 +76,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/index.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/index.ts
 FNF:0
 FNH:0
 DA:1,12
@@ -87,7 +87,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/ts-axios.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/ts-axios.ts
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -99,7 +99,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/xhr.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/xhr.ts
 FN:8,xhr
 FN:9,(anonymous_1)
 FN:41,ConfigureRequest
@@ -247,7 +247,7 @@ BRF:45
 BRH:45
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/cancel/Cancel.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/cancel/Cancel.ts
 FN:1,(anonymous_0)
 FN:4,Cancel
 FN:9,isCancel
@@ -267,7 +267,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/cancel/CancelToken.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/cancel/CancelToken.ts
 FN:8,(anonymous_0)
 FN:12,CancelToken
 FN:15,(anonymous_2)
@@ -312,7 +312,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/core/Axios.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/core/Axios.ts
 FN:23,(anonymous_0)
 FN:27,Axios
 FN:35,(anonymous_2)
@@ -406,7 +406,7 @@ BRF:8
 BRH:8
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/core/dispatchRequest.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/core/dispatchRequest.ts
 FN:7,dispatchRequest
 FN:13,(anonymous_1)
 FN:16,(anonymous_2)
@@ -463,7 +463,7 @@ BRF:10
 BRH:10
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/core/interceptorManager.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/core/interceptorManager.ts
 FN:3,(anonymous_0)
 FN:4,InterceptorManager
 FN:7,(anonymous_2)
@@ -503,7 +503,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/core/mergeConfig.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/core/mergeConfig.ts
 FN:6,defaultStart
 FN:10,fromVal2Strat
 FN:16,deepMergeStrat
@@ -571,7 +571,7 @@ BRF:16
 BRH:16
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/core/transform.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/core/transform.ts
 FN:3,transform
 FN:14,(anonymous_1)
 FNF:2
@@ -596,7 +596,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/helpers/cookie.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/helpers/cookie.ts
 FN:2,(anonymous_0)
 FNF:1
 FNH:1
@@ -613,7 +613,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/helpers/data.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/helpers/data.ts
 FN:3,transformRequest
 FN:10,transformResoponse
 FNF:2
@@ -640,7 +640,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/helpers/error.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/helpers/error.ts
 FN:3,(anonymous_6)
 FN:32,createError
 FNF:2
@@ -658,7 +658,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/helpers/headers.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/helpers/headers.ts
 FN:4,normalizeHeaderName
 FN:8,(anonymous_1)
 FN:19,processHeaders
@@ -732,7 +732,7 @@ BRF:18
 BRH:18
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/helpers/url.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/helpers/url.ts
 FN:8,encode
 FN:19,buildURL
 FN:36,(anonymous_2)
@@ -827,7 +827,7 @@ BRF:26
 BRH:25
 end_of_record
 TN:
-SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios/src/helpers/util.ts
+SF:/Users/zzt/Documents/ts-axios-doc/project/ts-axios-git/ts-axios/src/helpers/util.ts
 FN:3,isDate
 FN:11,isPlainObject
 FN:15,isFormData
