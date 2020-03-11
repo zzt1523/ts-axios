@@ -20,4 +20,3 @@ function transformResoponse(data) {
     return data;
 }
 exports.transformResoponse = transformResoponse;
-//# sourceMappingURL=data.js.map

@@ -84,4 +84,3 @@ var Axios = /** @class */ (function () {
     return Axios;
 }());
 exports.default = Axios;
-//# sourceMappingURL=Axios.js.map

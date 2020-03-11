@@ -11,4 +11,3 @@ function isCancel(value) {
     return value instanceof Cancel;
 }
 exports.isCancel = isCancel;
-//# sourceMappingURL=Cancel.js.map

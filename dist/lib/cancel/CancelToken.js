@@ -34,4 +34,3 @@ var CancelToken = /** @class */ (function () {
     return CancelToken;
 }());
 exports.default = CancelToken;
-//# sourceMappingURL=CancelToken.js.map

@@ -7,4 +7,3 @@ var cookie = {
     }
 };
 exports.default = cookie;
-//# sourceMappingURL=cookie.js.map

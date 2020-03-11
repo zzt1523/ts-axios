@@ -50,4 +50,3 @@ function mergeConfig(config1, config2) {
     return config;
 }
 exports.default = mergeConfig;
-//# sourceMappingURL=mergeConfig.js.map

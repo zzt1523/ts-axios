@@ -85,4 +85,3 @@ function resolveURL(url) {
         host: host
     };
 }
-//# sourceMappingURL=url.js.map

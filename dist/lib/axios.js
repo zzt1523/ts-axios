@@ -29,4 +29,3 @@ axios.spread = function spread(callback) {
 };
 axios.Axios = Axios_1.default;
 exports.default = axios;
-//# sourceMappingURL=axios.js.map

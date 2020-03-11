@@ -3,3 +3,5 @@ node_modules/
 rpt2_36b38b615efd4e327ad3fd56ba038f4b9e94739b/
 dist/
 coverage/
+docs/
+.rpt2_cache/

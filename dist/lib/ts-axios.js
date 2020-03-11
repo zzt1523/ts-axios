@@ -9,4 +9,3 @@ var DummyClass = /** @class */ (function () {
     return DummyClass;
 }());
 exports.default = DummyClass;
-//# sourceMappingURL=ts-axios.js.map

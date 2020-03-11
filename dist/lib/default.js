@@ -38,4 +38,3 @@ methodsWithData.forEach(function (method) {
     };
 });
 exports.default = defaults;
-//# sourceMappingURL=default.js.map

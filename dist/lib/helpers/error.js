@@ -34,4 +34,3 @@ function createError(message, config, code, request, response) {
     return error;
 }
 exports.createError = createError;
-//# sourceMappingURL=error.js.map

@@ -61,4 +61,3 @@ function flattenHeaders(headers, method) {
     return headers;
 }
 exports.flattenHeaders = flattenHeaders;
-//# sourceMappingURL=headers.js.map

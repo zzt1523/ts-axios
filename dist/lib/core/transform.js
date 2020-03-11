@@ -13,4 +13,3 @@ function transform(data, headers, fns) {
     return data;
 }
 exports.default = transform;
-//# sourceMappingURL=transform.js.map

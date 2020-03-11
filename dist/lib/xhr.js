@@ -109,4 +109,3 @@ function xhr(config) {
     });
 }
 exports.default = xhr;
-//# sourceMappingURL=xhr.js.map
